@@ -3,6 +3,9 @@ import styled from 'styled-components'
 const Container = styled.div`
     font-family: 'Outfit', sans-serif;
     flex-shrink: 0;
+
+    text-align: center;
+    font-size: 14px;
 `
 
 const Footer = () => {
