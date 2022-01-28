@@ -1,0 +1,97 @@
+.followers {
+    display: grid;
+
+    @media (min-width: 40em) {
+        
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 60em) {
+        
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    gap: 1.875rem;
+    text-align: center;
+
+    &__media {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        color: $text-neutral-desaturated-blue;
+        font-size: 1rem;
+        img {
+            margin-right: 0.3rem;
+        }
+    }
+
+    &__card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        background-color: $card-bg-neutral-desaturated-blue;
+        // display: flex;
+        // flex-direction: column;
+        border-radius: .2rem;
+        .h1-text {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            font-size: 1rem;
+            color: $text-neutral-desaturated-blue;
+        }
+
+        .today {
+            font-size: 0.9rem;
+            font-weight: bold;
+            img {
+                margin-bottom: .1rem;
+            }
+
+            @media(min-width: 40em) {
+                color: $primary-lime-green;
+            }
+        }
+    }
+
+    &__amount {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .facebook {
+        border-top: 0.3rem solid $primary-facebook-color;
+    }
+
+    .twitter {
+        border-top: 0.3rem solid $primary-twitter-color;
+    }
+
+    .instagram {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0rem;
+            left: 0;
+            border-top-left-radius: .3rem;
+            border-top-right-radius: .3rem;
+            width: 100%;
+            height: .3rem;
+            background: $primary-instagram-color;
+        }
+
+    }
+
+    .youtube {
+        border-top: 0.3rem solid $primary-youtube-color;
+    }
+
+    
+}

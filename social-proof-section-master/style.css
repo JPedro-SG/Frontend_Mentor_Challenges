@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+:root {
+  --bg-color-neutral: hsl(0, 0%, 100%);
+  --bg-star-color-neutral: hsl(300, 24%, 96%);
+  --bg-card-color-primary: hsl(300, 43%, 22%);
+  --font-color-primary: hsl(333, 80%, 67%);
+  --font-color-neutral: hsl(303, 10%, 53%);
+  --bg-image-top: url("../images/bg-pattern-top-mobile.svg");
+  --bg-image-bottom: url("../images/bg-pattern-bottom-mobile.svg");
+  --fs-900: 2rem;
+}
+@media (min-width: 1024px) {
+  :root {
+    --fs-900: 2.5rem;
+    --bg-image-top: url("../images/bg-pattern-top-desktop.svg");
+    --bg-image-bottom: url("../images/bg-pattern-bottom-desktop.svg");
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  background-color: var(--bg-color-neutral);
+  background-image: var(--bg-image-top), var(--bg-image-bottom);
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  align-self: center;
+  flex-grow: 1;
+  display: grid;
+  padding: 5rem 2rem;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .container {
+    margin-bottom: 0;
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 4rem;
+  }
+}
+@media (min-width: 1100px) {
+  .container {
+    padding: 5rem 10rem;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    padding: 5rem 12rem;
+  }
+}
+.container .text-section {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+.container .text-section h1 {
+  max-width: 11ch;
+  font-size: var(--fs-900);
+  color: var(--bg-card-color-primary);
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .text-section p {
+  max-width: 40ch;
+  font-size: 1rem;
+  color: var(--font-color-neutral);
+}
+@media (min-width: 1024px) {
+  .container .text-section {
+    text-align: left;
+  }
+  .container .text-section h1 {
+    margin-left: 0;
+  }
+}
+.container .stars-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.3rem;
+  align-items: center;
+}
+.container .stars-section .star-card {
+  width: 100%;
+  max-width: 27rem;
+  background-color: var(--bg-star-color-neutral);
+  padding: 0.8rem 1em;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .container .stars-section .star-card {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .container .stars-section .star-gp-1 {
+    margin-top: 0;
+    align-self: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .container .stars-section .star-gp-2 {
+    align-self: center;
+  }
+}
+@media (min-width: 1024px) {
+  .container .stars-section .star-gp-3 {
+    align-self: flex-end;
+  }
+}
+.container .stars-section .stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .stars-section .stars svg {
+  display: block;
+  margin: 0 0.2rem;
+}
+@media (max-width: 768px) {
+  .container .stars-section .stars svg {
+    margin-bottom: 0.7rem;
+  }
+}
+.container .stars-section p {
+  color: var(--bg-card-color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.container .cards-section {
+  text-align: start;
+  color: var(--bg-color-neutral);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+}
+@media (min-width: 1024px) {
+  .container .cards-section {
+    grid-column: 1/3;
+    flex-direction: row;
+  }
+}
+.container .cards-section .card-container {
+  max-width: 25ch;
+  background-color: var(--bg-card-color-primary);
+  padding: 1.5em;
+  border-radius: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .container .cards-section .gp-card-1 {
+    margin-bottom: 2rem;
+  }
+  .container .cards-section .gp-card-3 {
+    margin-top: 2rem;
+  }
+}
+.container .cards-section .card-status {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem 1rem 0;
+}
+.container .cards-section .card-status img {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+.container .cards-section .card-status .card-status-info {
+  line-height: 1.6;
+}
+.container .cards-section .card-status .card-status-info h4, .container .cards-section .card-status .card-status-info p {
+  font-size: 0.7rem;
+}
+.container .cards-section .card-status .card-status-info p {
+  color: #ca739a;
+}
+.container .cards-section .mensage {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.attribution {
+  flex-shrink: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

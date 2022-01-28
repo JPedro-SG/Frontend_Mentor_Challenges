@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/5c41b4c01a.js" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body> 
+
+<main>
+  <div class="text_content">
+    <h1>Learn to code by watching others </h1>
+
+    <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. </p>
+  </div>
+  <div class="container">
+    <a class="free_trial_btn" href="#">Try it free 7 days <span>then $20/mo. thereafter</span></a>
+    <form action="" novalidate>
+      <div class="gp group-1">
+        <input id="firstName" type="text" placeholder="First Name" >
+        <i class="fas fa-exclamation-circle"></i>
+        <i class="fas fa-check-circle"></i>
+        <span id="first_name_span">First Name cannot be empty</span>
+      </div>
+      <div class="gp">
+        <input id="lastName" type="text" placeholder="Last Name">
+        <i class="fas fa-exclamation-circle"></i>
+        <i class="fas fa-check-circle"></i>
+        <span id="last_name_span">Last Name cannot be empty </span>
+      </div>
+      <div class="gp">
+        <input type="email" placeholder="Email Address" name="mail" id="email">
+        <i class="fas fa-exclamation-circle"></i>
+        <i class="fas fa-check-circle"></i>
+        <span id="email_span">Look like this is not a email</span>
+      </div>
+      <div class="gp ">
+        <input type="password" placeholder="Password" name="password" id="password">
+        <i class="fas fa-exclamation-circle"></i>
+        <i class="fas fa-check-circle"></i>
+        <span id="password_span">Password cannot be empty</span>
+      </div>
+
+      <input type="submit" value="Claim your free trial" class="submit_btn">
+      <span class="terms_e_services" >By clicking the button, you are agreeing to our <a>Terms and Services</a></span>
+    </form>
+  </div>
+</main>
+  
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">João Pedro S. G. Santos</a>.
+    </p>
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+.text-section {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+
+    h1 {
+        max-width: 11ch;
+        font-size: var(--fs-900);
+        color: var(--bg-card-color-primary);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        max-width: 40ch;
+        font-size: 1rem;
+        color: var(--font-color-neutral);
+    }
+
+    @media (min-width: 1024px) {
+        text-align: left;
+
+        h1 {
+            margin-left: 0;
+        }
+    }
+}

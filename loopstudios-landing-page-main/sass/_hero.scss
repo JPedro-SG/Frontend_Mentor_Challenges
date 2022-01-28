@@ -1,0 +1,165 @@
+.hero {
+    font-family: 'Alata', sans-serif;
+    color: $white;
+
+    &__bg-img {
+        position: relative;
+        min-height: 40rem;
+        background:url('../images/mobile/image-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center left;
+        
+        @include breakpoint-up(xmedium) {
+            background-image: url('../images/desktop/image-hero.jpg');
+            background-position: top center;  
+        }
+
+        // overlay
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.25);
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+        } 
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 2.175rem 0.875rem;
+        margin: 0 auto;
+        max-width: 69.625rem;
+        @include breakpoint-up(xlarge){
+            padding-top: 5rem;
+        }
+
+        a {
+            .logo {
+                width: 8.5rem;
+                height: 1.5rem;
+            }
+            z-index: 1; // make the 'a' tag be over the overlay
+        }
+
+        .hamburguer {
+            cursor: pointer;
+            transition: filter 0.3s;
+            
+            &:hover { filter: opacity(70%); }
+            
+        }
+
+        &__items {
+            align-self: flex-end;
+            list-style: none;
+            li {    
+                a{
+                    color: unset;
+                    text-decoration: none;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 2rem;
+                }
+                cursor: pointer;
+                position: relative;
+
+                // underline effect start
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    border-radius: 0.25rem;
+                    width: 50%;
+                    background-color: $white;
+                    height: 0.15em;
+                    bottom: -1rem;
+                    left: 25%;
+
+                    opacity: 0;
+                    transform: translateX(-50%);
+                    transform-origin: center;
+                    transform: scale(0);
+                    transition: opacity 0.3s, transform 300ms;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                // underline end
+            }
+
+
+        }
+
+        // make mobile images disappear at 640px and causes desktop images to appear
+        .for_mobiles {
+            display: block;
+            z-index: 1;
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+        }
+
+        .for_desktops {
+            display: none;
+            @include breakpoint-up(medium) {
+                display: flex;
+            }
+        }
+    } 
+
+    &__wrapper {
+        margin: 6rem auto 0 auto;
+        padding-left: 0.875rem;
+        display: inline-block;
+        max-width: 69.625rem;
+        @include breakpoint-up(large) {
+            display: block;
+            // margin-top: 3rem;
+        }
+        position: relative;
+        
+        transform: translateY(-0%); 
+    }
+
+    &__text {
+        // margin-top: 6rem;
+        // margin-left: 10%;
+        // margin-right: auto;
+        padding: 2rem;
+        border: 1px solid $white;
+        // max-width:30ch;
+        display: inline-block;
+        // @include breakpoint-up(xlarge) {
+        //     display: block;
+        // }
+
+        h1 {
+            text-transform: uppercase;
+            font-family: 'Josefin Sans', sans-serif;
+            // max-width: 13ch;
+            max-width: 10ch;
+            display: inline-block;
+            font-size: 2.75rem;
+            // font-size: 4.3rem;
+
+            @include breakpoint-up(medium) {
+                max-width: 13ch;
+            }
+
+            @include breakpoint-up(medium) {
+                font-size: 4.3rem;
+            }
+        }
+    }
+}

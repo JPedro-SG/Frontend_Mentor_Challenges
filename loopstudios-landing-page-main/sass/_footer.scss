@@ -1,0 +1,128 @@
+.footer {width: 100%;
+    font-family: 'Alata', sans-serif;
+    color: $white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    background-color: $black;
+    padding: 2rem;
+    padding-bottom: 0;
+
+    &__header {
+        width: 100%;
+        max-width: 69.625rem;
+        margin: 0 auto; // make the header centered at larges screens
+
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            @include breakpoint-down(small) {
+                margin: 0 auto;
+            } 
+        }
+
+        
+    }
+
+    .medias {
+        img{
+            &:not(:last-child){
+                margin-right: 0.5rem;
+            }
+        }
+    }
+    
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        margin: 0 auto; // make the footer centered at larges screens
+        max-width: 69.625rem; 
+        
+        @include breakpoint-up(medium) {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        @include breakpoint-up(xmedium) {
+            flex-direction: row;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            @include breakpoint-up(medium) {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+                position: relative;
+            // underline start
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -1rem;
+                    left: 25%;
+
+                    width: 50%;
+                    height: 0.15em;
+                    border-radius: 0.2em;
+                    background-color: white;
+                    
+                    transform-origin: center;
+                    transform: translateX(-50%);
+                    transform: scale(0);
+                    opacity: 0;
+                    transition: opacity .25s, transform .25s;
+                }
+                
+                &:hover::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                // underline end
+
+            }
+        }
+
+        p {
+            font-size: 0.8rem;
+            min-width: 28ch;
+            color: $dark-gray;
+        }
+    }
+
+    // make mobile images disappear at 640px and causes desktop images to appear
+   // start
+    .for-mobiles {
+        display: block;
+        margin: 0 auto;
+
+        @include breakpoint-up(medium) {
+            display: none;
+        }
+    }
+
+    
+    .for-desktops {
+        display: none;
+
+        @include breakpoint-up(medium) {
+            display: block;
+        }
+    }
+
+    // end
+}

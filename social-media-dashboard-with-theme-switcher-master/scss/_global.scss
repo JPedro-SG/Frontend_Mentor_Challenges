@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+body {
+    font-family: $font;
+    height: 100%;
+    width: 100%;
+}
+
+.dual-background {
+    background: linear-gradient(to right, $top-bg-neutral-dark-blue, $top-bg-neutral-dark-blue) no-repeat, $bg-neutral-dark-blue;
+    background-size: 100% 14.125rem, 100% auto;
+    
+    color: white;
+
+    @media(min-width: 1023.9px) {
+        background-size: 100% 15.4125rem, 100% auto;
+    }
+    // 15.4125rem
+    
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // padding: 0 6.7%;
+}
