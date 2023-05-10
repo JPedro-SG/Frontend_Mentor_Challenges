@@ -38,4 +38,4 @@ Users should be able to:
 ## Author
 
 - Website - [loopstudios](https://gallant-leakey-c3f281.netlify.app/)
-- Frontend Mentor - [@Locky-Becken](https://www.frontendmentor.io/profile/Locky-Becken)
+- Frontend Mentor - [@JPedro-SG](https://www.frontendmentor.io/profile/JPedro-SG)
